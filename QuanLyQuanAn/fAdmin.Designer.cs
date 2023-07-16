@@ -1035,6 +1035,7 @@
             this.textBoxYear.Name = "textBoxYear";
             this.textBoxYear.Size = new System.Drawing.Size(100, 26);
             this.textBoxYear.TabIndex = 5;
+            this.textBoxYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxYear_KeyPress);
             // 
             // textBoxMonth
             // 
@@ -1042,6 +1043,7 @@
             this.textBoxMonth.Name = "textBoxMonth";
             this.textBoxMonth.Size = new System.Drawing.Size(100, 26);
             this.textBoxMonth.TabIndex = 4;
+            this.textBoxMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxMonth_KeyPress);
             // 
             // buttonSearchBill
             // 
@@ -1056,6 +1058,7 @@
             // crystalReportViewer1
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.AutoSize = true;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(17, 48);

@@ -55,7 +55,13 @@
     <Compile Include="CrystalReportDemo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportDemo.rpt</DependentUpon>
+      <DependentUpon>CrystalReportBillinMonth.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReportBillinMonth.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportBillinMonth.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
@@ -102,9 +108,9 @@
     <Compile Include="ReportDemo.Designer.cs">
       <DependentUpon>ReportDemo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CrystalReportDemo.rpt">
+    <EmbeddedResource Include="CrystalReportBillinMonth.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportDemo1.cs</LastGenOutput>
+      <LastGenOutput>CrystalReportBillinMonth.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>

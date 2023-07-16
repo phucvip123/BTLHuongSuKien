@@ -49,10 +49,6 @@
             this.textBoxAmount = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonPay = new System.Windows.Forms.Button();
-            this.textBoxDiscount = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxChangeTable = new System.Windows.Forms.ComboBox();
-            this.buttonChangeTable = new System.Windows.Forms.Button();
             this.flowLayoutPanelTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -224,10 +220,6 @@
             this.panel4.Controls.Add(this.textBoxAmount);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.buttonPay);
-            this.panel4.Controls.Add(this.textBoxDiscount);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.comboBoxChangeTable);
-            this.panel4.Controls.Add(this.buttonChangeTable);
             this.panel4.Location = new System.Drawing.Point(431, 438);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(402, 75);
@@ -238,9 +230,9 @@
             this.textBoxAmount.Enabled = false;
             this.textBoxAmount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAmount.ForeColor = System.Drawing.Color.Red;
-            this.textBoxAmount.Location = new System.Drawing.Point(236, 41);
+            this.textBoxAmount.Location = new System.Drawing.Point(6, 41);
             this.textBoxAmount.Name = "textBoxAmount";
-            this.textBoxAmount.Size = new System.Drawing.Size(100, 26);
+            this.textBoxAmount.Size = new System.Drawing.Size(170, 26);
             this.textBoxAmount.TabIndex = 6;
             this.textBoxAmount.TextChanged += new System.EventHandler(this.textBoxAmount_TextChanged);
             // 
@@ -249,7 +241,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(246, 9);
+            this.label2.Location = new System.Drawing.Point(3, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 18);
             this.label2.TabIndex = 5;
@@ -260,53 +252,13 @@
             // 
             this.buttonPay.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.buttonPay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPay.Location = new System.Drawing.Point(342, 3);
+            this.buttonPay.Location = new System.Drawing.Point(289, 3);
             this.buttonPay.Name = "buttonPay";
-            this.buttonPay.Size = new System.Drawing.Size(57, 69);
+            this.buttonPay.Size = new System.Drawing.Size(110, 69);
             this.buttonPay.TabIndex = 4;
             this.buttonPay.Text = "Pay";
             this.buttonPay.UseVisualStyleBackColor = false;
             this.buttonPay.Click += new System.EventHandler(this.buttonPay_Click);
-            // 
-            // textBoxDiscount
-            // 
-            this.textBoxDiscount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDiscount.Location = new System.Drawing.Point(119, 41);
-            this.textBoxDiscount.Name = "textBoxDiscount";
-            this.textBoxDiscount.Size = new System.Drawing.Size(100, 26);
-            this.textBoxDiscount.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(116, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 18);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Discount code";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // comboBoxChangeTable
-            // 
-            this.comboBoxChangeTable.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxChangeTable.FormattingEnabled = true;
-            this.comboBoxChangeTable.Location = new System.Drawing.Point(4, 41);
-            this.comboBoxChangeTable.Name = "comboBoxChangeTable";
-            this.comboBoxChangeTable.Size = new System.Drawing.Size(106, 26);
-            this.comboBoxChangeTable.TabIndex = 1;
-            // 
-            // buttonChangeTable
-            // 
-            this.buttonChangeTable.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChangeTable.Location = new System.Drawing.Point(0, 3);
-            this.buttonChangeTable.Name = "buttonChangeTable";
-            this.buttonChangeTable.Size = new System.Drawing.Size(110, 31);
-            this.buttonChangeTable.TabIndex = 0;
-            this.buttonChangeTable.Text = "Change table";
-            this.buttonChangeTable.UseVisualStyleBackColor = true;
-            this.buttonChangeTable.Click += new System.EventHandler(this.button2_Click);
             // 
             // flowLayoutPanelTable
             // 
@@ -357,10 +309,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonAddDishes;
-        private System.Windows.Forms.Button buttonChangeTable;
-        private System.Windows.Forms.ComboBox comboBoxChangeTable;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxDiscount;
         private System.Windows.Forms.ListView listViewBill;
         private System.Windows.Forms.Button buttonPay;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTable;

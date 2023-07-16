@@ -132,23 +132,20 @@ namespace QuanLyQuanAn
 
         private void buttonSearchBill_Click(object sender, EventArgs e)
         {
-            int month = Convert.ToInt32(textBoxMonth.Text.ToString());
-            int year = Convert.ToInt32(textBoxYear.Text.ToString());
-            string str = @"Data Source=PHUC\PHUC;Initial Catalog=QUANLYQUANAN;Integrated Security=True";
-            using (SqlConnection cnn = new SqlConnection(str))
+            
+            if (textBoxMonth.Text.ToString() != "" && textBoxYear.Text.ToString() != "")
             {
-                cnn.Open();
-                string sql = "exec USP_ReportDemo @month , @year";
-                SqlDataAdapter da = new SqlDataAdapter(sql, cnn);
-                DataTable dt = DataProvider.Instance.ExcuteQuery(sql, new object[] { month, year });
-
-                CrystalReportDemo crt = new CrystalReportDemo();
-                crt.SetDataSource(dt);
+                int month = Convert.ToInt32(textBoxMonth.Text.ToString());
+                int year = Convert.ToInt32(textBoxYear.Text.ToString());
+                CrystalReportBillinMonth crt = new CrystalReportBillinMonth();
+                crt.SetDataSource(DataProvider.Instance.ExcuteQuery("exec USP_GetBillInMonth @month , @year", new object[] { month, year }));
                 crystalReportViewer1.ReportSource = crt;
                 crystalReportViewer1.Refresh();
-                cnn.Close();
             }
-
+            else
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void buttonStatistic_Click(object sender, EventArgs e)
@@ -514,6 +511,22 @@ namespace QuanLyQuanAn
 
             }
             dataGridViewAccount.Refresh();
+        }
+
+        private void textBoxMonth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Không cho phép ký tự này được nhập vào TextBox
+            }
+        }
+
+        private void textBoxYear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; // Không cho phép ký tự này được nhập vào TextBox
+            }
         }
     }
 }
