@@ -14,11 +14,21 @@ namespace QuanLyQuanAn.DAO
 
         internal static AccountDAO Instance { get { if (instance == null) instance = new AccountDAO(); return instance; } private set => instance = value; }
         private AccountDAO() { }
-        public bool Login(string username, string password)
+        public int Login(string username, string password)
         {
             string query = @"USP_Login @username , @password";
-            DataTable result = DataProvider.Instance.ExcuteQuery(query,new object[] {username,password});
-            return result.Rows.Count>0;
+            DataProvider.Instance.ExcutScalar("update Account set count = count + 1 where username = N'" + username+"'");
+            int i = Convert.ToInt16(DataProvider.Instance.ExcutScalar("select count from account where username = N'" + username+"'"));
+            if (i > 3)
+            {
+                return -1;
+            }
+            else
+            {
+                DataTable result = DataProvider.Instance.ExcuteQuery(query, new object[] { username, password });
+                return result.Rows.Count;
+            }
+            
         }
         public int GetTypeAccount(string username)
         {

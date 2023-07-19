@@ -528,5 +528,18 @@ namespace QuanLyQuanAn
                 e.Handled = true; // Không cho phép ký tự này được nhập vào TextBox
             }
         }
+
+        private void buttonReport_Click(object sender, EventArgs e)
+        {
+            CrystalReportTopBill crt = new CrystalReportTopBill();
+            DataTable dt1 = DataProvider.Instance.ExcuteQuery("exec USP_TopBill");
+            for(int i = dt1.Rows.Count - 1;i>= 5; i--)
+            {
+                dt1.Rows.Remove(dt1.Rows[i]);
+            }
+            crt.SetDataSource(dt1);
+            crystalReportViewerTopBill.ReportSource = crt;
+            crystalReportViewerTopBill.Refresh();
+        }
     }
 }

@@ -192,6 +192,8 @@ namespace QuanLyQuanAn
             if (MessageBox.Show("Bạn có chắc muốn thanh toán không","Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 BillDAO.Instance.checkOut(idBill,table.Id,total);
+                int total1 = Convert.ToInt32(DataProvider.Instance.ExcutScalar(@"select sum(f.price*bi.count) from BillInfor as bi, Food as f, Bill as b where bi.idBill = b.id and bi.idFood = f.id and b.id = " + idBill));
+                DataProvider.Instance.ExcuteNonQuery("update bill set Total = " + total1 +" where id = "+idBill);
                 Load_Table();
                 ShowBill(table.Id);
 

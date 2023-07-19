@@ -118,6 +118,10 @@
             this.textBoxMonth = new System.Windows.Forms.TextBox();
             this.buttonSearchBill = new System.Windows.Forms.Button();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.TopBill = new System.Windows.Forms.TabPage();
+            this.crystalReportViewerTopBill = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.buttonReport = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabControlAdmin.SuspendLayout();
             this.tabPageRevenue.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -155,6 +159,7 @@
             this.panel22.SuspendLayout();
             this.panel23.SuspendLayout();
             this.tabReport.SuspendLayout();
+            this.TopBill.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlAdmin
@@ -165,6 +170,7 @@
             this.tabControlAdmin.Controls.Add(this.tabPageDinnerTable);
             this.tabControlAdmin.Controls.Add(this.tabPageAccount);
             this.tabControlAdmin.Controls.Add(this.tabReport);
+            this.tabControlAdmin.Controls.Add(this.TopBill);
             this.tabControlAdmin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlAdmin.Location = new System.Drawing.Point(12, 12);
             this.tabControlAdmin.Name = "tabControlAdmin";
@@ -1066,6 +1072,48 @@
             this.crystalReportViewer1.Size = new System.Drawing.Size(775, 402);
             this.crystalReportViewer1.TabIndex = 2;
             // 
+            // TopBill
+            // 
+            this.TopBill.Controls.Add(this.label16);
+            this.TopBill.Controls.Add(this.crystalReportViewerTopBill);
+            this.TopBill.Controls.Add(this.buttonReport);
+            this.TopBill.Location = new System.Drawing.Point(4, 27);
+            this.TopBill.Name = "TopBill";
+            this.TopBill.Padding = new System.Windows.Forms.Padding(3);
+            this.TopBill.Size = new System.Drawing.Size(798, 456);
+            this.TopBill.TabIndex = 6;
+            this.TopBill.Text = "Top Bill";
+            this.TopBill.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewerTopBill
+            // 
+            this.crystalReportViewerTopBill.ActiveViewIndex = -1;
+            this.crystalReportViewerTopBill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewerTopBill.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewerTopBill.Location = new System.Drawing.Point(6, 6);
+            this.crystalReportViewerTopBill.Name = "crystalReportViewerTopBill";
+            this.crystalReportViewerTopBill.Size = new System.Drawing.Size(786, 415);
+            this.crystalReportViewerTopBill.TabIndex = 1;
+            // 
+            // buttonReport
+            // 
+            this.buttonReport.Location = new System.Drawing.Point(348, 427);
+            this.buttonReport.Name = "buttonReport";
+            this.buttonReport.Size = new System.Drawing.Size(75, 23);
+            this.buttonReport.TabIndex = 0;
+            this.buttonReport.Text = "Report";
+            this.buttonReport.UseVisualStyleBackColor = true;
+            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 429);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(133, 18);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Top 5 Bill min total";
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1127,6 +1175,8 @@
             this.panel23.PerformLayout();
             this.tabReport.ResumeLayout(false);
             this.tabReport.PerformLayout();
+            this.TopBill.ResumeLayout(false);
+            this.TopBill.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1223,5 +1273,9 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxYear;
         private System.Windows.Forms.TextBox textBoxMonth;
+        private System.Windows.Forms.TabPage TopBill;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewerTopBill;
+        private System.Windows.Forms.Button buttonReport;
+        private System.Windows.Forms.Label label16;
     }
 }

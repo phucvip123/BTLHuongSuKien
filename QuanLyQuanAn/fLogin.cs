@@ -52,21 +52,29 @@ namespace QuanLyQuanAn
         {
             username = textBoxUsername.Text;
             string password = textBoxPassword.Text;
-            if (login(username,password))
+            if (login(username,password) == 1)
             {
+                
                 fTableManager f = new fTableManager(username);
+
                 this.Hide();
                 f.ShowDialog();
                 this.Show();
             }
-            else
+            else if(login(username, password) == 0)
             {
                 MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác!","Fail",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            bool login(string userName,string passWord)
+            else
             {
-                return AccountDAO.Instance.Login(userName,passWord);
+                MessageBox.Show("Bạn đã đăng nhập quá số lần cho phép!", "Fail", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
+            
+        }
+        int login(string userName, string passWord)
+        {
+            return AccountDAO.Instance.Login(userName, passWord);
         }
     }
 }
